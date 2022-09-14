@@ -1,0 +1,49 @@
+.html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    line-height: 1.3;
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    margin-top: 0;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+    color: #000;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    background-color: #fdce4b;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 0;
+    min-width: 112px;
+    min-height: 24px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #fcbf2b;
+        //   box-shadow: 0px 1px 1px #888, 0px -1px 1px #888;
+        cursor: pointer;
+    }
+}
