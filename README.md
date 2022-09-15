@@ -12,4 +12,4 @@ gulp
 
 #### Site demo:
 
-https://unrivaled-horse-87b3f2.netlify.app/
+https://cardscrud.netlify.app/
