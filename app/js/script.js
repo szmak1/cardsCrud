@@ -54,6 +54,23 @@ function removeLastCard() {
 // copies first card and adds it to the end of the stack list
 function copyFirstCard() {
     const firstCard = document.querySelector('.card');
+    if (!firstCard) {
+        // adds card if no cards to innerHTML
+        const div = document.createElement('div');
+        div.classList.add('stack');
+        container.appendChild(div);
+        row[row.length - 1].innerHTML += `
+        
+         <a class="card">
+           <img loading="lazy" src="${data[0].image}" alt="Avatar">
+           <div class="container">
+             <h4><b>${data[0].name}</b></h4>
+             <p>${data[0].text}</p>
+           </div>
+         </a>
+       
+       `;
+    }
     const lastStack = row[row.length - 1];
     const lastStackCard = lastStack.getElementsByClassName('card');
     if (lastStackCard.length < 3) {
