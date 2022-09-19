@@ -12,4 +12,4 @@ gulp
 
 #### Site demo:
 
-[site demo](https://6328bc7ca2eb0e05a37844a0--cardscrud.netlify.app/)
+[site demo](https://cardscrud2022.netlify.app)
