@@ -5,14 +5,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #faf8f6;
+    background-color: $bg__white;
     .wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 1400px;
+        max-width: $max-width;
         margin: 0 auto;
-        height: unset;
         padding: $pad_xs 0;
         @include bp-large {
             padding: $pad_s 0;
@@ -22,24 +18,13 @@ body {
         }
         .section__stacks__cards {
             padding: $pad_xs;
-            transition: transform 0.2s; /* Animation */
-            // @include bp-medium {
-            //   padding: $pad_m;
-            // }
             .container__stack {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                align-items: center;
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 42px;
-                transition: transform 0.2s; /* Animation */
-                transition: 0.7s, margin 1.5s, width 1.5s, height 1.5s;
             }
             .container__btn {
                 margin-top: 22px;
-                width: 100%;
                 display: flex;
                 justify-content: space-evenly;
                 margin: $pad_m 0px;
@@ -57,7 +42,6 @@ body {
             @include bp-max {
                 display: flex;
                 justify-content: end;
-                align-self: flex-end;
             }
         }
     }
