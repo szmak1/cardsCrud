@@ -69,6 +69,7 @@ function copyFirstCard() {
        
        `;
     }
+
     const lastStack = row[row.length - 1];
     const lastStackCard = lastStack.getElementsByClassName('card');
     if (lastStackCard.length < 3) {
@@ -79,4 +80,10 @@ function copyFirstCard() {
         newStack.appendChild(firstCard.cloneNode(true));
         container.appendChild(newStack);
     }
+    updateScroll();
+}
+
+function updateScroll() {
+    let currentStack = document.getElementsByClassName('stack');
+    currentStack[currentStack.length - 1].scrollIntoView();
 }
