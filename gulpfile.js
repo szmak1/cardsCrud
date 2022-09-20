@@ -1,14 +1,9 @@
-const { watch, series, parallel, src, dest, gulp } = require('gulp');
+const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const terser = require('gulp-terser');
 const browsersync = require('browser-sync').create();
-
-const connect = require('gulp-connect'); // Runs a local webserver
-const open = require('gulp-open'); // Opens a URL in a web browser
-const exec = require('child_process').exec; // run command-line programs from gulp
-const execSync = require('child_process').execSync; // command-line reports
 
 // Sass Task
 function scssTask() {
@@ -49,26 +44,6 @@ function watchTask() {
         series(scssTask, jsTask, browsersyncReload)
     );
 }
-// Launch Chrome web browser
-// https://www.npmjs.com/package/gulp-open
-function openBrowser(done) {
-    var options = {
-        uri: 'http://localhost:8080',
-    };
-    return src('./').pipe(open(options));
-    done();
-}
-
-// Gulp plugin to run a webserver (with LiveReload)
-// https://www.npmjs.com/package/gulp-connect
-function server(done) {
-    return connect.server({
-        root: './',
-        port: 8080,
-        debug: true,
-    });
-    done();
-}
 
 // Commit and push files to Git
 function git(done) {
@@ -92,9 +67,6 @@ function netlifyOpen(done) {
 
 // Deploy command
 exports.deploy = series(git, netlify, netlifyOpen);
-
-// Default Gulp command
-exports.default = series(openBrowser, server);
 
 // Default Gulp task
 exports.default = series(scssTask, jsTask, browsersyncServe, watchTask);
